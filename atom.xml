@@ -1,0 +1,26 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+  <title>Michael Auli</title>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author>
+    <name>Michael Auli</name>
+    <email>m.auli@sms.ed.ac.uk</email>
+  </author>
+ 
+  {% for post in site.posts %}
+  {% if post.url %}
+  <entry>
+    <title>{{ post.layout | capitalize }}: {{ post.title }}</title>
+    <link href="{{ post.url }}"/>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <id>http://http://alopez.github.com{{ post.id }}</id>
+    <content type="html">{{ post.abstract }}</content>
+ </entry>
+ {% endif %}
+ {% endfor %}
+ 
+</feed>

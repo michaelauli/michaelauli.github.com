@@ -1,0 +1,106 @@
+---
+layout: default
+title: Michael Auli 
+---
+
+<script type="text/javascript">
+function unhide(divID) {
+  var item = document.getElementById(divID);
+    if (item) {
+      item.className=(item.className=='hidden-abstract')?'unhidden-abstract':'hidden-abstract';
+    }
+  }
+</script>
+
+<div id="bio" class="cv">
+<h1>Michael Auli</h1>
+<p>My research focuses on applying <a href="http://en.wikipedia.org/wiki/Deep_learning">deep learning</a> to natural language processing, and specifically machine translation.  Previously, I worked on improving supervised parsing using <a href="http://groups.inf.ed.ac.uk/ccg">Combinatory Categorial Grammar (CCG)</a> which led to the <a href="papers/auli_emnlp2011_softmax_ccg.pdf">best reported results</a> on CCGbank.
+
+<!--Its use in practical, fast and accurate parsing poses many interesting challenges. 
+My <a href="#pubs">research</a> tackled these challenges via efficient search, modelling and 
+optimisation.
+-->
+
+
+<p>I am currently a postdoc researcher at <a href="http://research.microsoft.com/en-us/">Microsoft Research</a> in Redmond, WA.
+Previously, I received my Ph.D. from the <a href="http://www.inf.ed.ac.uk/">School of Informatics</a> at the <a href="http://www.ed.ac.uk">University of Edinburgh</a> supervised by 
+<a href="http://www.iccs.informatics.ed.ac.uk/~pkoehn/">Philipp Koehn</a> and
+<a href="http://www.cs.jhu.edu/~alopez/">Adam Lopez</a>.
+I also had the good fortune to collaborate with 
+<a href="http://www.inf.ed.ac.uk/people/students/Prachya_Boonkwan.html">Prachya Boonkwan</a>,
+<a href="http://www.isi.edu/~chiang">David Chiang</a>,
+<a href="http://www.cl.cam.ac.uk/~sc609/">Stephen Clark</a>,
+<a href="http://www-nlp.stanford.edu/~mgalley/">Michel Galley<a>,
+<a href="http://research.microsoft.com/en-us/um/people/jfgao/">Jianfeng Gao<a>,
+<a href="http://www.inf.ed.ac.uk/people/students/Hieu_Hoang.html">Hieu Hoang</a>,
+<a href="http://www.cs.umd.edu/~ynhu/">Yuening Hu</a>,
+<a href="http://www.isi.edu/~knight/">Kevin Knight</a>,
+<a href="http://homepages.inf.ed.ac.uk/s0791051/index.html">Tom Kwiatkowski</a>,
+<a href="http://research.microsoft.com/en-us/people/arulm/">Arul Menezes</a>,
+<a href="http://www.eecs.berkeley.edu/~adpauls/">Adam Pauls</a>,
+<a href="http://research.microsoft.com/en-us/people/chrisq/">Chris Quirk</a>,
+<a href="http://homepages.inf.ed.ac.uk/steedman/">Mark Steedman</a>,
+<a href="http://homepages.inf.ed.ac.uk/csutton/">Charles Sutton</a>, 
+<a href="http://www.cs.washington.edu/homes/lsz/">Luke Zettlemoyer</a>, and
+<a href="http://research.microsoft.com/en-us/people/gzweig/">Geoffrey Zweig</a>.
+</div>
+
+<div class="news">
+<h2>News</h2>
+<ul class="posts">
+  <li>My submission to EMNLP 2014 was accepted!</li>
+  <li>I gave a <a href="talks/140711_uw_rnn_translate.pdf">talk</a> on neural network-based machine translation at the University of Washington.</li>
+  <li>My submission to ACL 2014 on expected BLEU training for neural networks was accepted.</li>
+</ul>
+</div>
+
+<a name="pubs"></a>
+<h2>Publications</h2>
+<ul class="posts">
+  {% for post in site.posts %}
+    {% if post.layout == 'paper' %}
+      <li>{% if post.doc-url %}<a href="{{ post.doc-url }}" onClick="javascript: _gaq.push(['_trackPageview', '{{ post.url }}']);">{% endif %}
+        {{ post.title }}{% if post.status %} ({{ post.status }}){% endif %}{% if post.doc-url %}</a>{% endif %}{% if post.title contains '?' %}{% else %}.{% endif %}
+      {% if post.authors %}{{ post.authors }}.{% endif %}  
+      {% case post.paper-type %}
+        {% when "inproceedings" %}
+          {% if post.date > site.time %}To appear in{% else %}In{% endif %}
+          {% if post.booktitle-url %}<a subtle="yes" href="{{ post.booktitle-url}}">{% endif %}
+            <i>{{ post.booktitle }}</i>{% if post.booktitle-url %}</a>{% endif %},
+          {% if post.pages %}pages {{ post.pages }},{% endif %}
+        {% when "article" %}
+          {% if post.date > site.time %}To appear in{% else %}In{% endif %}
+          {% if post.journal-url %}<a subtle="yes" href="{{ post.journal-url }}">{% endif %}
+            <i>{{ post.journal }}</i>{% if post.journal-url %}</a>{% endif %}{% if post.date > site.time %},{% else %}
+              {% if post.volume %}{{ post.volume }}{% endif %}{% if post.number %}({{ post.number }}){% endif %}:
+              {% if post.article%}Article {{ post.article}},{% endif %}
+              {% if post.pages %}pages {{ post.pages }},{% endif %}
+            {% endif %}
+        {% when "dissertation" %}
+          Dissertation, {{ post.institution }}.
+        {% when "firstyearreport" %}
+          First-Year PhD Report, {{ post.institution }}.
+      {% endcase %} 
+      {{ post.date | date: "%B %Y" }}.
+      {% if post.abstract%}<a href="javascript:unhide('abstract{{ post.id }}')" onClick="javascript: _gaq.push(['_trackPageview', 'javascript:unhide('abstract{{ post.id }}')']);">[abstract]</a>{% endif %}
+      {% if post.errata %}<a href="javascript:unhide('errata{{ post.id }}')">[errata]</a>{% endif %}
+      {% if post.slides %}<a href="{{ post.slides }}">[slides]</a>{% endif %}
+      {% if post.latex %}<a href="{{ post.latex }}">[LaTeX source]</a>{% endif %}
+      {% if post.code %}<a href="{{ post.code }}">[code]</a>{% endif %}
+      {% if post.abstract%}<div id="abstract{{ post.id }}" class="hidden-abstract">{{ post.abstract }}</div>{% endif %}
+      {%if post.errata %}<div id="errata{{ post.id }}" class="hidden-abstract">{{ post.errata }}</div>{% endif %}
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<h2>Talks</h2>
+<a href="talks/140711_uw_rnn_translate.pdf">Learning to translate with neural networks</a>. Talk at the University of Washington, July 2014.
+<br>
+<a href="talks/cmu-talk.pdf">Integrated CCG Parsing and Supertagging</a>. Invited talk at Carnegie Mellon University, Johns Hopkins University, BBN Technologies, IBM Research and Microsoft Research June 2011 - May 2012.
+<br>
+<a href="talks/cambridge-talk.pdf">Accurate CCG Parsing with Approximate Language Intersection and Task-specific Optimization</a>. Invited talk at the University of Cambridge, May 2011. 
+
+<h2>Activities</h2>
+Organiser of the Edinburgh <a href="http://www.statmt.org/ued/">Machine Translation Reading Group</a> (June - Dec 2010) </br>
+Tutor <a href="http://www.inf.ed.ac.uk/teaching/courses/inf1/da">Informatics 1 Data and Analysis</a>, a first year course dealing with structured and unstructured data (Spring 2010)

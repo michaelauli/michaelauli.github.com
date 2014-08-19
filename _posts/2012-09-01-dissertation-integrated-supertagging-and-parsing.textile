@@ -1,0 +1,17 @@
+---
+layout: paper
+paper-type: dissertation 
+title: Integrated Supertagging and Parsing
+institution: University of Edinburgh
+doc-url: papers/michael.auli.thesis.pdf
+abstract: >
+  <p>Parsing is the task of assigning syntactic or semantic structure to a natural language sentence. This thesis focuses on syntactic parsing with Combinatory Categorial Grammar (CCG; Steedman 2000). CCG allows incremental processing, which is essential for speech recognition and some machine translation models, and it can build semantic structure in tandem with syntactic parsing. Supertagging solves a subset of the parsing task by assigning lexical types to words in a sentence using a sequence model. It has emerged as a way to improve the efficiency of full CCG parsing (Clark and Curran, 2007) by reducing the parser's search space. This has been very successful and it is the central theme of this thesis.
+         
+  <p> We begin by an analysis of how efficiency is being traded for accuracy in supertagging. Pruning the search space by supertagging is inherently approximate and to contrast this we include A* in our analysis, a classic exact search technique.Interestingly, we find that combining the two methods improves efficiency but we also demonstrate that excessive pruning by a supertagger significantly lowers the upper bound on accuracy of a CCG parser.
+    
+  <p> Inspired by this analysis, we design a single integrated model with both supertagging and parsing features, rather than separating them into distinctmodels chained together in a pipeline. To overcome the resulting complexity, we experiment with both loopy belief propagation and dual decomposition approaches to inference, the first empirical comparison of these algorithms that we are aware of on a structured natural language processing problem.
+    
+  <p> Finally, we address training the integrated model. We adopt the idea of optimising directly for a task-specific metric such as is common in other areas like statistical machine translation. We demonstrate how a novel dynamic programming algorithm enables us to optimise for F-measure, our task-specific evaluation metric, and experiment with approximations, which prove to be excellent substitutions.
+    
+  <p> Each of the presented methods improves over the state-of-the-art in CCG parsing. Moreover, the improvements are additive, achieving a labelled/unlabelled dependency F-measure on CCGbank of 89.3%/94.0% with gold part-of-speech tags, and 87.2%/92.8% with automatic part-of-speech tags, the best reported results for this task to date. Our techniques are general and we expect them to apply to other parsing problems, including lexicalised tree adjoining grammar and context-free grammar parsing.
+---

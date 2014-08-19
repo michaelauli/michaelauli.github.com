@@ -1,0 +1,38 @@
+---
+layout: paper
+paper-type: firstyearreport
+institution: University of Edinburgh
+title: CCG-based Models for Statistical Machine Translation
+doc-url: papers/first_year_report.pdf
+abstract: >
+  The arguably best performing statistical machine translation systems are based
+  on context-free formalisms or weakly equivalent ones. These models usually use
+  a syn- chronous version of a context-free grammar (SCFG) which we argue is too
+  rigid for the highly ambiguous task of human language translation. This is
+  exacerbated by the fact that the imperfect methods available for aligning
+  parallel texts make extracting an effi- cient grammar very hard. As a result,
+  the context-free grammars extracted are usually very large in size after
+  having already been restricted through a variety of constraints.
+  <br><br> 
+
+  We propose to use Combinatorial Categorial Grammar (CCG) for machine trans-
+  lation models. CCG is a lexicalized, mildly-context-sensitive formalism which
+  is very well suited to capture long-distance dependencies that are not
+  addressed very well by most current models. We believe that CCG is very well
+  suited for the task of machine translation due to its ability to represent
+  non-constituents in a syntactic way which fre- quently occur in parallel texts
+  as well as its high derivational flexibility. This allows us to use some of
+  the advantages of non-syntactic phrase-based approaches within a syntactic
+  framework such as a relatively small grammar size compared to context-free-
+  based machine translation grammars.
+  <br><br>
+
+  A number of models leveraging the advantages of CCG are possible, however, our
+  principal goal is to develop a string-to-tree based model which projects CCG
+  on the target side of a synchronous grammar. We intend to apply the vast
+  progress made in monolingual CCG parsing to machine translation. Additionally,
+  we propose to extend CCG to a synchronous grammar (SCCG) as it has been done
+  for other related for- malisms such as tree adjoining grammars. We hope that a
+  SCCG may provide similar derivational flexibility to monolingual CCG which may
+  result in a better model for translational equivalence.
+---

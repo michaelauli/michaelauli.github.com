@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>{{ page.title }}</title>
+   <meta name="author" content="Adam Lopez" />
+
+   <link href="atom.xml" rel="alternate" title="Adam Lopez" type="application/atom+xml" />
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection" />
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=6630774; 
+var sc_invisible=1; 
+var sc_security="71bb070c"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter"><a title="tumblr statistics"
+href="http://statcounter.com/tumblr/" target="_blank"><img
+class="statcounter"
+src="http://c.statcounter.com/6630774/0/71bb070c/1/"
+alt="tumblr statistics" ></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+<script src="scripts/gatag.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21832871-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body>
+
+<div class="site">
+
+  <div class="leftsidebar">
+  {% if page.sidebar %}
+    {{ page.sidebar }}
+  {% else %}
+    <p>
+      <script type="text/javascript">
+        document.write();
+        var x = Math.floor(Math.random()*0);
+        switch(x)
+        {
+        case 0:
+          	document.write("<img src=\"img\\msr_oct_2013.jpg\" width=\"200\" title=\"Michael Auli\"/>");
+          	break;
+	  }
+      </script>
+      <h2>Contact Information</h2>
+      Microsoft Research<br/>
+      One Microsoft Way<br/>
+      Redmond, WA 98052 <br/>
+      <a href="mailto:michael.auli __AT__ gmail.com">michael.auli __AT__ gmail.com</a></br>
+      <br/>
+      <a href="Michael_Auli_CV.pdf">[Curriculum vitae]</a>
+      <br/>
+      <a href="http://uk.linkedin.com/pub/michael-auli/15/695/b82">[LinkedIn]</a>
+	  <br/>
+    </p>
+  {% endif %}
+  </div>
+
+  <div class="content">
+    {{ content }}
+    <div class="footer">
+      Last updated on {{ site.time | date: "%B %d, %Y" }}.
+    </div>
+ </div> 
+
+</div>
+
+</body>
+</html>
