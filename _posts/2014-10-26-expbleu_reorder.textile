@@ -3,7 +3,7 @@ layout: paper
 paper-type: inproceedings
 authors: Michael Auli and Michel Galley and Jianfeng Gao
 title: Large Scale Expected BLEU Training of Phrase-based Reordering Models
-doc-url: 
+doc-url: papers/emnlp2014_expbleu_reorder.pdf
 booktitle: Proceedings of EMNLP
 booktitle-url: http://emnlp2014.org/
 abstract: >
